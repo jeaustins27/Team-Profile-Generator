@@ -11,6 +11,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+console.log("Welcome to the Team Profile Generator! Please answer the following questions to create your team profile.")
 // Creating an empty array to store the employees in
 const employees = [];
 
