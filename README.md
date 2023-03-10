@@ -15,14 +15,14 @@ This project is a Node.js command-line application that takes in information abo
   * [Questions](#questions)
 
   ## Links
-  * [Demo]()
+  * [Demo](https://drive.google.com/file/d/1qiyu4qXAin6j3v4rNRIZrXlbcu0M_mtr/view)
   * [GitHub Repo](https://github.com/jeaustins27/Team-Profile-Generator)
 
   ## Usage
 To get started, clone the repo onto your machine. Once cloned, run "npm install" in the command line to install the required packages. To start, run "node app.js" to begin the prompt. Answer the prompts in the command line, to choose roles, use the arrow keys. Once you are satisfied with the amount of employees generated the program will generate an HTML with the team.
 
   ## Screenshots
-  ![Generated Team]()
+  ![Generated Team](./images/My-Team.png)
 
   ## Credits
   * [W3Schools](https://www.w3schools.com/)
