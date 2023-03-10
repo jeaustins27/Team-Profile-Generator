@@ -11,8 +11,10 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+// Creating an empty array to store the employees in
 const employees = [];
 
+// Creating the questions for the user to answer
 const questions = () => {
     return inquirer.prompt([
         {
@@ -60,6 +62,7 @@ const questions = () => {
             name: "addEmployee",
         },
     ])
+    // Creating the employee objects based on the user's answers
         .then((answers) => {
             let employee;
             if (answers.role === "Manager") {
@@ -79,6 +82,26 @@ const questions = () => {
         });
 };
 
+// Function to create the team.html file
+function createTeam() {
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR);
+    }
+    fs.writeFileSync(outputPath, render(employees), "utf-8");
+};
+
+// Calling the questions function at the start of the program, once the user has answered all the questions, the createTeam function is called
+// to create the team.html file
+questions()
+    .then((employees) => {
+        return render(employees);
+    })
+    .then ((html) => {
+        return createTeam(outputPath, html);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
